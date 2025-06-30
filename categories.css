@@ -1,0 +1,854 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8; /* Very light background for the page */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.85em;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+}
+
+.top-bar .contact-info,
+.top-bar .user-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.top-bar .contact-info span,
+.top-bar .user-actions span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-bar .contact-info i,
+.top-bar .user-actions i {
+    font-size: 0.9em;
+}
+
+/* Main Navbar */
+.main-navbar {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #4CAF50;;
+}
+
+.main-navbar .logo img {
+    height: 50px; /* Adjust logo image size */
+    width: 50px;
+    object-fit: contain;
+}
+
+.main-nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.main-nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #4CAF50;;
+    transition: width 0.3s ease;
+}
+
+.main-nav-links a.active,
+.main-nav-links a:hover {
+    color: #4CAF50;;
+}
+
+.main-nav-links a.active::after,
+.main-nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-icons a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-icons a i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color:#4CAF50;; /* Icon color */
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: #4CAF50;;
+}
+
+.nav-icons a:hover i {
+    color: #4CAF50;;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-color: white; /* Matches body background or slightly different if needed */
+    padding: 80px 0; /* More padding for a prominent hero */
+}
+
+.hero-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 350px; /* Ensure content doesn't get too narrow */
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Heading in green */
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    color: var(--light-text);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.shop-now-btn {
+    background-color: #4CAF50;;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px; /* Slightly more square than previous example */
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #45a049;
+}
+
+.hero-illustration {
+    flex: 1;
+    min-width: 350px; /* Ensure image doesn't get too narrow */
+    text-align: center;
+}
+
+.hero-illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .top-bar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-bar .contact-info,
+    .top-bar .user-actions {
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .main-navbar .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .main-navbar .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .main-nav-links ul {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+        gap: 20px;
+    }
+
+    .nav-icons {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .hero-section .container {
+        flex-direction: column-reverse; /* Image on top for mobile */
+        text-align: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        min-width: unset;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-illustration {
+        margin-bottom: 30px;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .shop-now-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .main-nav-links a {
+        font-size: 1em;
+    }
+
+    .nav-icons a {
+        font-size: 0.8em;
+    }
+
+    .nav-icons a i {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .top-bar .contact-info,
+    .top-bar .user-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .main-navbar .logo {
+        font-size: 1.2em;
+    }
+
+    .main-navbar .logo img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .main-nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav-links a {
+        font-size: 0.9em;
+    }
+
+    .nav-icons {
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+}
+
+
+.category-navigation {
+    display: flex;
+    justify-content: center; /* Distribute items evenly */
+    gap: 40px; /* Space between items */
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Default text color */
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.category-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    color: #007bff; /* Example hover color for text */
+}
+
+.category-item img {
+    width: 60px; /* Adjust icon size as needed */
+    height: 60px; /* Adjust icon size as needed */
+    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+    margin-bottom: 8px; /* Space between image and text */
+}
+
+/* Optional: Add responsive adjustments if needed */
+@media (max-width: 768px) {
+    .category-navigation {
+        flex-wrap: wrap; /* Allow items to wrap to next line on smaller screens */
+        justify-content: space-around; /* Adjust spacing for wrapped items */
+        gap: 20px; /* Reduce gap on smaller screens */
+        padding: 15px 20px;
+    }
+
+    .category-item {
+        font-size: 12px;
+    }
+
+    .category-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-navigation {
+        flex-direction: column; /* Stack items vertically on very small screens */
+        align-items: flex-start; /* Align stacked items to the left */
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .category-item {
+        width: 100%; /* Make items take full width when stacked */
+        align-items: flex-start; /* Align content to the left within the item */
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Max width for the content */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    
+}
+
+.category-section {
+    margin-bottom: 40px; /* Space between different category sections */
+}
+
+.category-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px; /* Space below the title */
+    display: flex; /* Allow icon and text to be on the same line */
+    align-items: center; /* Vertically align icon and text */
+    font-weight: bold;
+}
+
+.category-icon {
+    width: 30px; /* Size of the small icon next to the category title */
+    height: 30px;
+    margin-right: 10px; /* Space between icon and text */
+    object-fit: contain;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Space between product cards */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none; /* Remove underline from links */
+    color: #333;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow on hover */
+}
+
+.card-image-wrapper {
+    width: 100%; /* Ensure wrapper takes full width of card */
+    padding-top: 100%; /* Create a square aspect ratio (1:1) */
+    position: relative;
+    overflow: hidden; /* Hide any overflow if image is larger */
+    margin-bottom: 10px;
+}
+
+.card-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure image fits within the square, maintaining aspect ratio */
+    padding: 10px; /* Add some padding around the image inside the square wrapper */
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 5px; /* Add horizontal padding to text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .category-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .product-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 10px;
+    }
+
+    .category-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .category-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+}
+
+/* General Body Styling */
+body {
+    font-family: sans-serif; /* Or your preferred font */
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8; /* Light background similar to the image */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    /* Consider adding a subtle box-shadow if desired */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8em; /* Adjust font size */
+    color: #005600; /* Dark green similar to the image */
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.section-title .title-icon {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Category Grid Layout */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin-bottom: 40px; /* Space after each section grid */
+}
+
+/* Individual Category Item */
+.category-item {
+    background-color: #fff; /* White background for each item */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    cursor: pointer; /* Indicates it's clickable */
+    overflow: hidden; /* Ensures image doesn't spill out if larger */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes text to bottom if image is different height */
+    align-items: center;
+    position: relative; /* For the background image */
+}
+
+.category-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.category-item1 img {
+    max-width: 150%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Slightly rounded image corners */
+    margin-bottom: 10px;
+    display: block; /* Removes extra space below image */
+}
+
+.category-item p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Background gradient/pattern for category items (subtle effect from image) */
+.category-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%),
+                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0.5; /* Adjust opacity for subtlety */
+    z-index: 0; /* Ensure it's behind content */
+    border-radius: 10px; /* Match item border-radius */
+}
+
+.category-item img,
+.category-item p {
+    position: relative; /* Ensure content is above the pseudo-element background */
+    z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    }
+
+    .section-title {
+        font-size: 1.3em;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+.main-footer {
+    background-color: #66BB6A; /* Main green background color from the image */
+    color: #fff;
+    padding: 60px 0 20px; /* Top, bottom, and side padding */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    max-width: 1200px; /* Align with your main content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for content within the footer */
+}
+
+.footer-column {
+    flex: 1; /* Distribute space evenly */
+    min-width: 200px; /* Minimum width for columns before wrapping */
+    margin-bottom: 30px; /* Space between columns when wrapped */
+    padding-right: 20px; /* Space between columns */
+}
+
+.footer-column:last-child {
+    padding-right: 0; /* No right padding for the last column */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo-image {
+    width: 60px; /* Adjust logo size as needed */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.footer-logo h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+}
+
+.company-info p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #f0f0f0; /* Slightly lighter text for readability */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    font-size: 1.1em;
+    color: #fff; /* Icons white */
+}
+
+.contact-item span {
+    color: #fff;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #fff;
+    margin-left: 6%;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #f0f0f0; /* Lighter color for links */
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.social-app h3 {
+    margin-bottom: 25px; /* Adjust for more space before icons */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px; /* Space between social icons and app downloads */
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white for icon background */
+    color: #fff;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.app-downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.app-downloads img {
+    width: 140px; /* Adjust size of app store buttons */
+    height: auto;
+    border-radius: 8px; /* Slight roundness to app images */
+    transition: transform 0.2s ease;
+}
+
+.app-downloads img:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle line above copyright */
+    padding-top: 20px;
+    margin-top: 40px; /* Space between content and copyright */
+    font-size: 0.9em;
+    color: #f0f0f0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .footer-content {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center stacked columns */
+    }
+
+    .footer-column {
+        min-width: unset; /* Remove min-width to allow full width */
+        width: 100%;
+        text-align: center; /* Center text within columns */
+        padding-right: 0;
+    }
+
+    .footer-logo, .contact-item {
+        justify-content: center; /* Center logo and contact items */
+    }
+
+    .company-info p {
+        padding: 0 15px; /* Add horizontal padding to text */
+    }
+}
+
+@media (max-width: 576px) {
+    .main-footer {
+        padding: 40px 0 15px;
+    }
+
+    .footer-logo h1 {
+        font-size: 1.5em;
+    }
+
+    .footer-column h3 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .app-downloads {
+        align-items: center;
+    }
+}

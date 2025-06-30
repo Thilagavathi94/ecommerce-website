@@ -1,0 +1,250 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Dark background as per image */
+    color: #fff; /* White text for overall readability */
+    line-height: 1.6;
+}
+
+.page-container {
+    max-width: 1200px; /* Max width for the entire content */
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Delivery Tracking Section */
+.delivery-tracking-section {
+    background-color: #000; /* Matches body background */
+    padding: 20px;
+    margin-bottom: 50px; /* Space below the timeline */
+    text-align: center;
+}
+
+.delivery-date-header {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 40px; /* Space above timeline */
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    position: relative;
+    padding: 0 20px; /* Padding to ensure dots are not cut off */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* Aligns with the middle of dots */
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background-color: #ccc; /* Light grey line */
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensures dots and text are above the line */
+    flex: 1; /* Distribute space evenly */
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc; /* Default grey dot */
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #ccc; /* Border for dots */
+}
+
+.timeline-item.active .timeline-dot {
+    background-color: #007bff; /* Blue for active dot */
+    border-color: #007bff;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle glow for active */
+}
+
+.timeline-status {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.timeline-date {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+/* Explore More Section */
+.explore-more-section {
+    background-color: #000;
+    padding: 20px 0;
+}
+
+.explore-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px; /* Match padding of main container for alignment */
+}
+
+.explore-title {
+    font-size: 1.8em;
+    color: #fff;
+    margin: 0;
+}
+
+.see-more-link {
+    font-size: 1em;
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.see-more-link:hover {
+    text-decoration: underline;
+}
+
+.product-scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 15px 20px; /* Padding to give space at edges and for scrollbar */
+    gap: 25px; /* Space between product cards */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Hide scrollbar for aesthetic, if desired */
+.product-scroll-container::-webkit-scrollbar {
+    height: 8px; /* Height of horizontal scrollbar */
+}
+
+.product-scroll-container::-webkit-scrollbar-track {
+    background: #333; /* Color of the track */
+    border-radius: 4px;
+}
+
+.product-scroll-container::-webkit-scrollbar-thumb {
+    background: #555; /* Color of the scroll thumb */
+    border-radius: 4px;
+}
+
+.product-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Color on hover */
+}
+
+
+.product-card {
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 180px; /* Fixed width for each card */
+    background-color: #fff; /* White background for product cards */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 150px; /* Fixed height for product images */
+    object-fit: contain; /* Ensure image fits well */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 0 10px;
+    }
+    .timeline::before {
+        left: 10px;
+        right: 10px;
+    }
+
+    .timeline-item {
+        font-size: 0.9em;
+    }
+
+    .timeline-dot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .delivery-date-header {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+
+    .explore-title {
+        font-size: 1.5em;
+    }
+
+    .product-scroll-container {
+        padding: 10px 15px;
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 160px;
+        padding: 12px;
+    }
+    .product-image {
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .timeline-item {
+        font-size: 0.8em;
+    }
+    .timeline-dot {
+        width: 15px;
+        height: 15px;
+    }
+
+    .delivery-date-header {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+
+    .explore-header {
+        padding: 0 10px;
+    }
+
+    .explore-title {
+        font-size: 1.3em;
+    }
+
+    .product-scroll-container {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .product-card {
+        width: 140px;
+        padding: 10px;
+    }
+    .product-image {
+        height: 110px;
+    }
+}

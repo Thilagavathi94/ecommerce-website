@@ -1,0 +1,137 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.85em;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+}
+
+.top-bar .contact-info,
+.top-bar .user-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.top-bar .contact-info span,
+.top-bar .user-actions span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-bar .contact-info i,
+.top-bar .user-actions i {
+    font-size: 0.9em;
+}
+
+/* Main Navbar */
+.main-navbar {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #4CAF50;;
+}
+
+.main-navbar .logo img {
+    height: 50px; /* Adjust logo image size */
+    width: 50px;
+    object-fit: contain;
+}
+
+.main-nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.main-nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #4CAF50;;
+    transition: width 0.3s ease;
+}
+
+.main-nav-links a.active,
+.main-nav-links a:hover {
+    color: #4CAF50;;
+}
+
+.main-nav-links a.active::after,
+.main-nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-icons a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-icons a i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color:#4CAF50;; /* Icon color */
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: #4CAF50;;
+}
+
+.nav-icons a:hover i {
+    color: #4CAF50;;
+}

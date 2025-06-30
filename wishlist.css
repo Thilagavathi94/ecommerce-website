@@ -1,0 +1,278 @@
+/* General Body Styling (for background behind the cart) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Dark background to show the cart's contrast */
+    display: flex;
+    justify-content: flex-end; /* Align cart to the right */
+    min-height: 100vh;
+}
+
+/* Cart Sidebar Container */
+.cart-sidebar {
+    width: 450px; /* Adjust width as per image */
+    background-color: rgb(86, 126, 86); /* Dark background for the cart */
+    color: #fff;
+    padding: 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Shadow for sidebar effect */
+    display: flex;
+    flex-direction: column;
+    /* For demonstration, we'll make it always visible. For a real sidebar,
+       you'd typically use `transform: translateX(100%)` and then
+       `transform: translateX(0)` with a transition to slide it in/out. */
+}
+
+/* Cart Header */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f0f0f0; /* Light color for "My Cart" */
+    margin: 0;
+}
+
+.close-btn {
+    font-size: 2em;
+    color: #bbb;
+    cursor: pointer;
+    line-height: 1; /* Prevent extra line height from pushing it down */
+    padding: 0 5px; /* Make it easier to click */
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.item-count {
+    font-size: 1.2em;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.header-divider {
+    border: none;
+    border-top: 1px solid #444; /* Darker grey line */
+    margin: 20px 0;
+}
+
+/* Cart Content Area (scrollable if many items) */
+.cart-content {
+    flex-grow: 1; /* Allows it to take up available vertical space */
+    overflow-y: auto; /* Enable scrolling for many items */
+    padding-right: 10px; /* Space for scrollbar if present */
+}
+
+/* Scrollbar styling (optional, for webkit browsers) */
+.cart-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-content::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.cart-content::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.cart-content::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+
+/* Cart Item Card */
+.cart-item-card {
+    background-color: #aed581; /* Light green background for the card */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 20px; /* Space between item details and bill details */
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+    color: #333; /* Darker text inside the light green card */
+}
+
+.item-details-left {
+    display: flex;
+    gap: 15px;
+    flex: 1; /* Allow left part to take available space */
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Ensure image fits without cropping */
+    border-radius: 5px;
+    background-color: #fff; /* White background for the image placeholder */
+    padding: 5px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0 0 5px 0;
+}
+
+.item-weight {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+.item-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2e7d32; /* Darker green for price */
+    margin: 0 0 10px 0;
+}
+
+.save-for-later {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+    cursor: pointer;
+}
+
+.heart-icon {
+    color: #e57373; /* Red heart icon */
+    margin-left: 5px;
+}
+
+/* Bill Details within the card */
+.bill-details-card {
+    flex-shrink: 0; /* Prevent it from shrinking */
+    width: 180px; /* Fixed width for bill details */
+    margin-left: auto; /* Pushes it to the right within the flex container */
+    padding-left: 15px;
+    border-left: 1px dashed #7cb342; /* Dashed separator */
+}
+
+.bill-title {
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    color: #2e7d32; /* Darker green for Bill Details title */
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.bill-row.total-row {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #2e7d32; /* Darker green for "To Pay" */
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #7cb342; /* Solid line before total */
+}
+
+
+/* Buy Now Button Section */
+.buy-now-section {
+    padding-top: 20px;
+    border-top: 1px solid #444; /* Separator for the button section */
+    text-align: center; /* Center the button */
+    margin-top: auto; /* Pushes the button to the bottom if content is short */
+}
+
+.buy-now-btn {
+    background-color: #8bc34a; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Pill-shaped button */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%; /* Button takes up 80% width */
+    max-width: 300px; /* Max width for larger screens */
+}
+
+.buy-now-btn:hover {
+    background-color: #7cb342; /* Darker green on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%; /* Full width on smaller screens */
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .cart-item-card {
+        flex-direction: column; /* Stack item details and bill details */
+        align-items: center;
+        text-align: center;
+    }
+
+    .item-details-left {
+        flex-direction: column; /* Stack image and info */
+        align-items: center;
+        text-align: center;
+    }
+
+    .bill-details-card {
+        width: 100%; /* Full width for bill details */
+        border-left: none; /* Remove left border */
+        border-top: 1px dashed #7cb342; /* Add top border */
+        padding-top: 15px;
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 20px; /* Space between item and bill details */
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-title {
+        font-size: 2em;
+    }
+
+    .close-btn {
+        font-size: 1.8em;
+    }
+
+    .item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-name {
+        font-size: 1em;
+    }
+
+    .item-price {
+        font-size: 1.1em;
+    }
+
+    .buy-now-btn {
+        width: 90%;
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+.pos{
+    opacity: 0.4;
+}

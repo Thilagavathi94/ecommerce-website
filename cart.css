@@ -1,0 +1,300 @@
+/* Styles for the overall cart overlay */
+.abs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    display: flex; /* Use flexbox to center or position the sidebar */
+    justify-content: flex-end; /* Align sidebar to the right */
+    align-items: flex-start; /* Align to the top, adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    /* Add 'display: none;' here if you want it hidden by default and toggle with JavaScript */
+    /* display: none; */
+}
+
+/* Styles for the cart sidebar itself */
+.cart-sidebar {
+    background-color: #fff;
+    width: 400px; /* Adjust sidebar width as needed */
+    max-width: 90%; /* Max width for smaller screens */
+    height: 100%;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Shadow to make it pop */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height */
+    transform: translateX(0); /* Initial position (visible) */
+    transition: transform 0.3s ease-out; /* Smooth slide-in/out transition */
+    overflow-y: auto; /* Enable scrolling for the whole sidebar if content overflows */
+}
+
+/* If you want a slide-out effect, add a class like this with JavaScript */
+/*
+.cart-sidebar.hidden {
+    transform: translateX(100%);
+}
+*/
+
+
+/* Cart Header styles */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.cart-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.close-btn {
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0 10px;
+    line-height: 1; /* For better vertical alignment of 'x' */
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+/* Item count and divider */
+.item-count {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.header-divider {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+
+/* Cart Content area */
+.cart-content {
+    flex-grow: 1; /* Allows content area to take available space */
+    overflow-y: auto; /* Enables scrolling within the cart content */
+    padding-right: 5px; /* Space for scrollbar if present */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.cart-content p {
+    color: #888;
+    font-style: italic;
+}
+
+/* Individual Cart Item styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee; /* Dotted line between items */
+    gap: 10px;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    font-size: 1.05em;
+}
+
+.item-weight {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Item Quantity Controls */
+.item-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures borders are contained */
+}
+
+.decrease-qty-btn,
+.increase-qty-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #555;
+    transition: background-color 0.2s ease;
+}
+
+.decrease-qty-btn:hover,
+.increase-qty-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.item-quantity {
+    padding: 5px 12px;
+    font-weight: 600;
+    color: #333;
+    min-width: 25px; /* Ensures consistent width for quantity display */
+    text-align: center;
+}
+
+/* Item Price */
+.item-price {
+    font-weight: 600;
+    color: #4CAF50; /* Green for price */
+    margin-left: 15px; /* Space between controls and price */
+    min-width: 70px; /* Ensure price has enough space */
+    text-align: right;
+}
+
+/* Remove Item Button */
+.remove-item-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #bbb;
+    cursor: pointer;
+    margin-left: 10px;
+    line-height: 1; /* For better vertical alignment */
+}
+
+.remove-item-btn:hover {
+    color: #ff4d4d; /* Red on hover */
+}
+
+/* Bill Details Card */
+.bill-details-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bill-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.bill-row span:first-child {
+    font-weight: 400;
+}
+
+.bill-row span:last-child {
+    font-weight: 500;
+    color: #333;
+}
+
+.bill-row.total-row {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+}
+
+.bill-row.total-row span:last-child {
+    color: #4CAF50; /* Green for total amount */
+}
+
+/* Buy Now Section */
+.buy-now-section {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.buy-now-btn {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%; /* Full width button */
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%; /* Full width on small screens */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .cart-item {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .item-info, .item-controls, .item-price, .remove-item-btn {
+        flex-basis: 100%; /* Take full width on small items */
+        margin: 5px 0;
+        justify-content: center;
+    }
+
+    .item-price {
+        text-align: center;
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,210 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling on the body when modal is open */
+}
+
+/* Simulated Background Content */
+.background-content {
+    background-color: #333; /* Dark background similar to the image */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For z-index to be behind modal */
+    z-index: 1;
+}
+
+/* Login Modal Overlay */
+.login-modal-overlay {
+    position: fixed; /* Stays in place even on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to appear on top */
+}
+
+/* Login Modal Content */
+.login-modal-content {
+    background-color: #aed581; /* Light green background for the modal */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column; /* Stack image and form vertically */
+    align-items: center;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Maximum width for the modal */
+    box-sizing: border-box; /* Include padding in width */
+    position: relative; /* For positioning the image */
+    overflow: hidden; /* Ensures parts of the image don't spill out */
+}
+
+/* Modal Image Container (for positioning the groceries) */
+.modal-image-container {
+    position: absolute;
+    top: -80px; /* Adjust to move image up */
+    width: 100%;
+    text-align: center;
+    z-index: 2; /* Ensure image is above main modal content if needed */
+}
+
+.groceries-image {
+    max-width: 80%; /* Adjust size of the groceries image */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Form Area */
+.modal-form-area {
+    margin-top: 150px; /* Push content down to account for image */
+    text-align: center;
+    width: 100%;
+}
+
+.modal-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modal-instruction {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Phone Input Wrapper */
+.phone-input-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 350px; /* Limit input width */
+    margin: 0 auto 30px auto;
+    background-color: #8bc34a; /* Green background for the input field */
+    border-radius: 25px; /* Rounded corners for the input field */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.phone-icon {
+    color: #fff; /* White icon color */
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.phone-input {
+    flex-grow: 1; /* Allows input to take remaining space */
+    border: none;
+    background: transparent;
+    color: #fff; /* White text for input */
+    font-size: 1.1em;
+    padding: 5px 0;
+    outline: none; /* Remove outline on focus */
+}
+
+.phone-input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Lighter placeholder text */
+}
+
+/* Continue Button */
+.continue-btn {
+    background-color: #fff; /* White background for the button */
+    color: #2e7d32; /* Dark green text */
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px; /* Pill-shaped button */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.continue-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Terms and Condition Text */
+.terms-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.terms-link {
+    color: #2e7d32; /* Dark green link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 650px) {
+    .modal-image-container {
+        top: -60px; /* Adjust for smaller screens */
+    }
+
+    .groceries-image {
+        max-width: 90%;
+    }
+
+    .modal-form-area {
+        margin-top: 100px; /* Less margin for smaller screens */
+    }
+
+    .login-modal-content {
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 1.8em;
+    }
+
+    .modal-instruction {
+        font-size: 1em;
+    }
+
+    .phone-input-wrapper {
+        width: 90%;
+    }
+
+    .continue-btn {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 400px) {
+    .modal-image-container {
+        top: -40px;
+    }
+
+    .modal-form-area {
+        margin-top: 80px;
+    }
+
+    .phone-input-wrapper {
+        width: 100%;
+        padding: 8px 15px;
+    }
+
+    .phone-input {
+        font-size: 1em;
+    }
+}
+

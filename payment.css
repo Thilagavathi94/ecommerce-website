@@ -1,0 +1,507 @@
+/* Basic Reset & Body Styling */
+
+
+.product-page-container {
+    max-width: 1400px; /* Adjust as needed for width */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; /* Main content background appears black */
+    min-height: calc(100vh - 40px); /* Fill most of the viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    border-radius: 8px; /* Slightly rounded corners for the main container */
+}
+
+/* Specific styling for this "Secured CheckUp" page if needed */
+.secured-checkup-page {
+    /* No specific changes here for now, but could be used for unique background, etc. */
+}
+
+/* Header Styling */
+.page-header h1 {
+    font-size: 2.2em;
+    color: #4CAF50; /* Green color for the main title */
+    margin-bottom: 30px;
+    padding-left: 20px; /* Aligns with the content below */
+    text-align: center; /* Centered as per image */
+}
+
+/* Main Content Layout (Flexbox for two columns) */
+.product-main-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 40px; /* Space between the left and right sections */
+    padding: 0 20px; /* Padding for the main content area */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Left Section - Product Image Area */
+.product-image-area {
+    flex: 1; /* Allows it to grow, but less than description */
+    min-width: 300px; /* Minimum width before wrapping */
+    text-align: center; /* Center image and text below it */
+    padding: 20px;
+    background-color: #aed581; /* Light green background for the image section */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-wrapper-large {
+    background-color: #fff; /* White background for the actual image */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-main-image-large {
+    max-width: 100%;
+    height: 300px; /* Fixed height to make it prominent */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the whole image is visible */
+    display: block;
+    border-radius: 5px;
+}
+
+.product-name-bottom {
+    font-size: 1.3em;
+    color: #333; /* Dark text on light green background */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Right Section - Description and Details */
+.product-description-details {
+    flex: 2; /* Takes up more space */
+    min-width: 450px; /* Minimum width before wrapping */
+    background-color: white; /* Dark background for the description panel */
+    padding: 25px;
+    border-radius: 10px;
+    color: black;
+    /* No box-shadow as per image */
+}
+
+.product-description-details h2 {
+    font-size: 1.5em;
+    color: #4CAF50; /* Green for section headings */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.product-description-details p {
+    font-size: 1em;
+    color: black; /* Lighter grey for paragraph text */
+    margin-bottom: 15px;
+}
+
+.product-description-details ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.product-description-details ul li {
+    font-size: 1em;
+    color: black;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.product-description-details ul li::before {
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: #4CAF50; /* Green bullet point */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Quality No / In Stoke line at the bottom of the right panel */
+.product-info-line-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: black;
+}
+
+.info-separator {
+    width: 1px;
+    height: 15px;
+    background-color: #4CAF50; /* Green separator */
+}
+
+.heart-icon-inline {
+    color: #e57373; /* Red heart icon */
+    margin-left: 5px;
+    font-size: 1.1em;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .product-main-content {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .product-image-area,
+    .product-description-details {
+        min-width: unset; /* Remove min-width restriction */
+        width: 100%; /* Take full width */
+        max-width: 600px; /* Limit max width for readability */
+    }
+
+    .product-image-area {
+        order: -1; /* Place image area above description on small screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-page-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8em;
+        padding-left: 0;
+    }
+
+    .product-image-area {
+        padding: 15px;
+    }
+
+    .product-main-image-large {
+        height: 250px; /* Adjust image height for smaller screens */
+    }
+
+    .product-name-bottom {
+        font-size: 1.1em;
+    }
+
+    .product-description-details {
+        padding: 20px;
+    }
+
+    .product-description-details h2 {
+        font-size: 1.3em;
+    }
+
+    .product-info-line-bottom {
+        flex-wrap: wrap; /* Allow info line items to wrap */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-main-image-large {
+        height: 200px;
+    }
+}
+/* Basic Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #aed581; /* Light green background as per image */
+    color: #333; /* Dark text for general readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.payment-page-container {
+    max-width: 1000px; /* Max width for the entire payment content */
+    width: 90%; /* Responsive width */
+    margin: 40px auto; /* Margin top/bottom */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between the two card sections and the final button */
+}
+
+.payment-sections-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    gap: 30px; /* Space between the two cards */
+    justify-content: center;
+    width: 100%;
+}
+
+/* Common Card Styling */
+.cost-summary-card,
+.payment-options-card {
+    background-color: #fff; /* White background for cards */
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow cards to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+    box-sizing: border-box;
+}
+
+/* Left Section: Total Cost Card */
+.cost-summary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom if space available */
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.cost-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.cost-value {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #555;
+}
+
+.session-info {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -10px; /* Bring closer to Total Cost */
+    margin-bottom: 20px;
+}
+
+.to-pay-row {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee; /* Separator for "To pay" */
+}
+
+.to-pay-row .cost-label,
+.to-pay-row .cost-value {
+    font-size: 1.5em; /* Larger for "To pay" */
+    color: #2e7d32; /* Darker green for "To pay" */
+}
+
+.card-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.promo-code-btn {
+    background-color: #8bc34a; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px; /* Rounded button */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Full width within its card */
+    margin-top: auto; /* Pushes button to bottom */
+}
+
+.promo-code-btn:hover {
+    background-color: #7cb342; /* Darker green on hover */
+}
+
+.promo-icon {
+    font-size: 1.2em;
+}
+
+/* Right Section: Payment Options Card */
+.payment-options-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-options-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative; /* For custom radio positioning */
+}
+
+.payment-method input[type="radio"] {
+    /* Hide the default radio button */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.payment-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1em;
+    color: #555;
+    width: 100%;
+}
+
+/* Custom Radio Button Styling */
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc; /* Default border color */
+    display: inline-block;
+    flex-shrink: 0; /* Prevent shrinking */
+    position: relative;
+}
+
+.payment-method input[type="radio"]:checked + .payment-label .custom-radio {
+    border-color: #8bc34a; /* Green border when checked */
+}
+
+.payment-method input[type="radio"]:checked + .payment-label .custom-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #8bc34a; /* Green dot when checked */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.payment-logo {
+    margin-left: auto; /* Push logos to the right */
+    height: 25px; /* Adjust logo height as needed */
+    object-fit: contain;
+}
+
+.paypal-logo {
+    height: 20px; /* Adjust PayPal logo specific size if needed */
+}
+
+.card-logos {
+    height: 25px; /* Adjust card logos specific size if needed */
+}
+
+.bottom-divider {
+    margin-bottom: 0; /* No margin below the last divider */
+}
+
+/* Bottom Button: Pay & Confirm */
+.pay-confirm-btn {
+    background-color: #8bc34a; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px; /* Pill-shaped button */
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Space from the cards above */
+}
+
+.pay-confirm-btn:hover {
+    background-color: #7cb342; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .payment-sections-wrapper {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .cost-summary-card,
+    .payment-options-card {
+        width: 90%; /* Take up more width */
+        max-width: 450px; /* Limit max width for readability */
+        padding: 20px 25px;
+    }
+
+    .pay-confirm-btn {
+        width: 80%; /* Adjust button width */
+        max-width: 400px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-page-container {
+        padding: 15px;
+        margin: 20px auto;
+        gap: 30px;
+    }
+
+    .cost-summary-card,
+    .payment-options-card {
+        padding: 15px 20px;
+        min-width: unset; /* Remove min-width for very small screens */
+    }
+
+    .cost-label {
+        font-size: 1.1em;
+    }
+    .cost-value {
+        font-size: 1.3em;
+    }
+
+    .to-pay-row .cost-label,
+    .to-pay-row .cost-value {
+        font-size: 1.4em;
+    }
+
+    .payment-options-title {
+        font-size: 1.1em;
+    }
+
+    .payment-label {
+        font-size: 1em;
+    }
+
+    .custom-radio {
+        width: 18px;
+        height: 18px;
+    }
+    .custom-radio::after {
+        width: 9px;
+        height: 9px;
+    }
+
+    .pay-confirm-btn {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+}

@@ -1,0 +1,182 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #aed581; /* Light green background as per image */
+    color: #333; /* Dark text for general readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflow from animations */
+}
+
+.order-confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px; /* Limit the width of the content */
+    width: 90%; /* Responsive width */
+}
+
+/* Checkmark Icon and Animation Wrapper */
+.checkmark-animation-wrapper {
+    position: relative;
+    width: 150px; /* Size of the main circle */
+    height: 150px;
+    margin-bottom: 40px; /* Space below the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark-circle {
+    width: 120px; /* Inner circle size */
+    height: 120px;
+    background-color: #28a745; /* Green circle color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5; /* Ensure it's above the pulsing circles */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.checkmark-circle .fas.fa-check {
+    font-size: 4em; /* Size of the checkmark */
+    color: #fff; /* White checkmark */
+}
+
+/* Pulsating Circles (similar to the image) */
+.circle-pulse {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3); /* Lighter green/white semi-transparent */
+    border-radius: 50%;
+    animation: pulse 2s infinite ease-out; /* Animation properties */
+    z-index: 1; /* Behind the main checkmark */
+}
+
+.circle-1 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 120px;
+    height: 120px;
+    animation-delay: 0.5s; /* Stagger animation */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.circle-3 {
+    width: 140px;
+    height: 140px;
+    animation-delay: 1s; /* Stagger animation */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Keyframe Animation for Pulsing Circles */
+@keyframes pulse {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.7);
+        opacity: 0.8;
+    }
+}
+
+
+/* Order Message */
+.order-message {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px; /* Space below the message */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Track Order Button */
+.track-order-btn {
+    background-color: #8bc34a; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px; /* Pill-shaped button */
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.track-order-btn:hover {
+    background-color: #7cb342; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .checkmark-animation-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 30px;
+    }
+    .checkmark-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .checkmark-circle .fas.fa-check {
+        font-size: 3.5em;
+    }
+
+    .order-message {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .track-order-btn {
+        font-size: 1.1em;
+        padding: 12px 30px;
+    }
+    .circle-1, .circle-2, .circle-3 {
+        /* Scale down the pulsing circles proportionally if needed */
+        width: calc(100px * 0.8);
+        height: calc(100px * 0.8);
+        /* Re-adjust position based on new checkmark-animation-wrapper size */
+    }
+}
+
+@media (max-width: 400px) {
+    .checkmark-animation-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .checkmark-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .checkmark-circle .fas.fa-check {
+        font-size: 3em;
+    }
+    .order-message {
+        font-size: 1.5em;
+    }
+    .track-order-btn {
+        font-size: 1em;
+        padding: 10px 25px;
+    }
+}
